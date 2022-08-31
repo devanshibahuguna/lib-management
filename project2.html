@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <title>Library Management</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap" rel="stylesheet">
+    <style>
+     
+        .navbar a {
+            color: white;
+        }
+
+        /* Add a black background color to the top navigation bar */
+.topnav {
+  overflow: hidden;
+  background-color:#0dcaf0;
+}
+
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: left;
+  display:flex;
+  color: rgb(249, 245, 245);
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: rgb(46, 159, 204);
+  color: rgb(255, 255, 255);
+}
+
+/* Style the "active" element to highlight the current page 
+.topnav a.active {
+  background-color: #0dcaf0;
+  color: white;
+}*/
+
+/* Style the search box inside the navigation bar */
+.topnav input[type=text] {
+  float: right;
+  padding: 6px;
+  border: none;
+  margin-top: 8px;
+  margin-right: 16px;
+  font-size: 17px;
+  border-radius: 3em;
+}
+
+/* When the screen is less than 600px wide, stack the links and the search field vertically instead of horizontally */
+@media screen and (max-width: 600px) {
+  .topnav a, .topnav input[type=text] {
+    float: none;
+    display: block;
+    text-align: left;
+    width: 100%;
+    margin: 0;
+    padding: 14px;
+  }
+  .topnav input[type=text] {
+    border: 1px solid #ccc;
+  }
+}
+.button {
+    top:50%;
+    color: #fff;
+    border:none; 
+    min-height:30px; 
+    min-width: 120px;
+    border-radius:10px; 
+    padding:10px;
+    background-color: #0dcaf0;
+    width: fit-content;
+  }
+
+.button:hover {
+      background-color:rgb(46, 159, 204);
+      transition: 0.1s;
+  }
+  .dropbtn {
+  background-color: #0dcaf0;
+  color:#fff;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  border-radius: 10px;
+  width: 300px;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: static;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 16px 50px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: rgb(102, 199, 237);
+color: #fff;
+transition: 0.3s;}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+  background-color: rgb(46, 159, 204);
+}
+    </style>
+
+</head>
+
+<body style="background-color: rgb(248, 245, 245);">
+    <nav class="navbar navbar-expand-lg bg-info">
+        <div class="container-fluid ">
+            <a class="navbar-brand" href="#" style="color: #fbfbfa ;font-family: 'IBM Plex Mono', monospace;">LIBRARY MANAGEMENT SYSTEM</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02"
+                aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse .text-light" id="navbarTogglerDemo02">
+                <div class="topnav" style="padding-left: 685px;">
+                    <a class="active" href="#">Home</a>
+                    <a href="#">About</a>
+                    <a href="#">Contact</a>
+                    <input type="text" placeholder="Search.." style="padding-left:10px; margin-left: 16px;">
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div id="message"></div>
+
+    <div class="container my-3">
+        <h1>Library System</h1>
+        <hr><br>
+        <form id="libraryForm">
+            <div class="form-group row">
+                <label for="bookName" class="col-sm-2 col-form-label" style="font-family: 'IBM Plex Mono', monospace; font-size: larger;"><strong>Name</strong></label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control w-50" id="bookName" placeholder="Book Name">
+                </div>
+            </div>
+            <br>
+            <div class="form-group row">
+                <label for="Author" class="col-sm-2 col-form-label"style="font-family: 'IBM Plex Mono', monospace; font-size: larger;"><strong>Author</strong></label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control w-50" id="author" placeholder="Author Name">
+                </div>
+            </div>
+            <fieldset class="form-group">
+                <br><br>
+                <div class="row">
+                    <legend class="col-form-label col-sm-2 pt-0" style="font-family: 'IBM Plex Mono', monospace; font-size: larger;"><strong>Type</strong></legend>
+                    <div class="col-sm-10">
+                    <div class="dropdown">
+                        <button class="dropbtn" style="padding-top: 10px;padding-bottom: 10px;border-left-width: 10px;margin-left: 1px;">Select Genre</button>
+                        <div class="dropdown-content">
+                          <a href="#" >Computer Programming</a>
+                          <a href="#">Ethical Hacking</a>
+                          <a href="#">Science Fiction</a>
+                          <a href="#">AI for Engineers</a>
+                          <a href="#">Data Science</a>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+            </fieldset>
+            <br>
+            <div class="form-group row py-3">
+               <div class="button" style="margin-left: 10px;padding-left: 25px;">
+                   Add Book
+                </div>
+            </div>
+        </form>
+<br>
+        <div id="table">
+            <h1>Your books</h1>
+            <hr>
+
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        
+                        <th scope="col">Name</th>
+                        <th scope="col">Author</th>
+                        <th scope="col">Type</th>
+                        <th scope="col">Withdraw</th>
+                    </tr>
+                </thead>
+                <tbody id='tableBody'></tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="library.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
