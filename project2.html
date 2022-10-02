@@ -11,7 +11,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap" rel="stylesheet">
     <style>
-     
+
         .navbar a {
             color: rgb(169, 67, 67);
         }
@@ -42,7 +42,7 @@
   color: rgb(221, 202, 202);
 }
 
-/* Style the "active" element to highlight the current page 
+/* Style the "active" element to highlight the current page
 .topnav a.active {
   background-color: #0dcaf0;
   color: white;
@@ -57,6 +57,10 @@
   margin-right: 16px;
   font-size: 17px;
   border-radius: 3em;
+}
+
+.topnav input[type=text]:focus-visible{
+    outline: 4px solid rgba(95, 213, 238, 0.75);
 }
 
 /* When the screen is less than 600px wide, stack the links and the search field vertically instead of horizontally */
@@ -76,10 +80,10 @@
 .button {
     top:50%;
     color: #fff;
-    border:none; 
-    min-height:30px; 
+    border:none;
+    min-height:30px;
     min-width: 120px;
-    border-radius:10px; 
+    border-radius:10px;
     padding:10px;
     background-color: #0dcaf0;
     width: fit-content;
@@ -200,7 +204,7 @@ transition: 0.3s;}
             </fieldset>
             <br>
             <div class="form-group row py-3">
-               <div class="button" style="margin-left: 10px;padding-left: 25px;">
+               <div class="button" style="margin-left: 10px;padding-left: 25px; cursor: pointer">
                    Add Book
                 </div>
             </div>
@@ -213,7 +217,7 @@ transition: 0.3s;}
             <table class="table table-striped">
                 <thead>
                     <tr>
-                        
+
                         <th scope="col">Name</th>
                         <th scope="col">Author</th>
                         <th scope="col">Type</th>
